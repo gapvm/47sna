@@ -888,7 +888,6 @@ body {
       document.getElementById("event-place").value = "";
     }
 
-  
    function renderEventList() {
   const container = document.getElementById("event-list");
   container.innerHTML = "";
@@ -897,30 +896,27 @@ body {
     const item = document.createElement("div");
     item.className = "accordion-item";
 
-    item.innerHTML = `
+    item.innerHTML = 
       <div class="accordion-header" onclick="toggleAccordion(${i})">
         <span class="color-swatch" style="background-color:${e.color}"></span>
         <strong>${e.name}</strong>
       </div>
       <div class="accordion-content" id="accordion-${i}">
-        <p><strong>Fechas:</strong> ${event.start} a ${event.end}</p>
+        <p><strong>Fechas:</strong> ${e.start} → ${e.end}</p>
         <p><strong>Detalle:</strong> ${e.desc}</p>
         <p><strong>Lugar:</strong> ${e.place}</p>
-     <div class="accordion-actions">
-  <button onclick="moveEventUp(${i})" title="Subir"><span class="material-symbols-outlined">arrow_upward</span></button>
-  <button onclick="moveEventDown(${i})" title="Bajar"><span class="material-symbols-outlined">arrow_downward</span></button>
-  <button onclick="editEvent(${i})" title="Editar"><span class="material-symbols-outlined">titlecase</span></button>
-  <button onclick="deleteEvent(${i})" title="Eliminar"><span class="material-symbols-outlined">close_small</span></button>
-</div>
-
+        <div class="accordion-actions">
+          <button onclick="editEvent(${i})"><span class="material-symbols-outlined">titlecase</span></button>
+          <button onclick="deleteEvent(${i})"><span class="material-symbols-outlined">close_small</span></button>
+        </div>
       </div>
-    `;
+    ;
     container.appendChild(item);
   });
 }
 
 function toggleAccordion(index) {
-  const content = document.getElementById(`accordion-${index}`);
+  const content = document.getElementById(accordion-${index});
   if (content.style.display === "block") {
     content.style.display = "none";
   } else {
@@ -944,18 +940,6 @@ function toggleAccordion(index) {
       updateCalendar();
     }
 
-    function moveEventUp(index) {
-  if (index <= 0) return;
-  [events[index - 1], events[index]] = [events[index], events[index - 1]];
-  updateCalendar();
-}
-
-function moveEventDown(index) {
-  if (index >= events.length - 1) return;
-  [events[index + 1], events[index]] = [events[index], events[index + 1]];
-  updateCalendar();
-}
-
     function updateCalendar() {
       createCalendar();
       renderEventList();
@@ -974,7 +958,7 @@ function moveEventDown(index) {
       const container = document.getElementById("calendar");
       container.innerHTML = "";
       const today = new Date();
-      const todayStr = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+      const todayStr = ${today.getFullYear()}-${String(today.getMonth()+1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')};
 
       for (let m = startMonth; m <= endMonth; m++) {
         const daysInMonth = new Date(year, m + 1, 0).getDate();
@@ -1006,7 +990,7 @@ function moveEventDown(index) {
           const dayNum = i - firstDay + 1;
 
           if (i >= firstDay && dayNum <= daysInMonth) {
-            const dateStr = `${year}-${String(m+1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
+            const dateStr = ${year}-${String(m+1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')};
             dayDiv.dataset.date = dateStr;
 
             const num = document.createElement("div");
@@ -1028,7 +1012,7 @@ function moveEventDown(index) {
                 const line = document.createElement("div");
                 line.className = "event-line";
                 line.style.backgroundColor = ev.color;
-                line.title = `${ev.name}\n${ev.desc || ''}`;
+                line.title = ${ev.name}\n${ev.desc || ''};
                 const initials = ev.name.split(' ').map(w => w[0]).join('').toUpperCase();
               const isStartDate = current.toISOString().split("T")[0] === ev.start;
 if (isStartDate) {
@@ -1053,7 +1037,7 @@ if (isStartDate) {
     }
 
     function exportToCSV() {
-      const escape = val => `"${String(val).replace(/"/g, '""')}"`;
+      const escape = val => "${String(val).replace(/"/g, '""')}";
       const csvRows = ["Nombre,Fecha inicio,Fecha fin,Color,Detalle,Lugar"];
       events.forEach(e => {
         const row = [escape(e.name), escape(e.start), escape(e.end), escape(e.color), escape(e.desc), escape(e.place)];
