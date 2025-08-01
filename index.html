@@ -902,7 +902,7 @@ body {
         <strong>${e.name}</strong>
       </div>
       <div class="accordion-content" id="accordion-${i}">
-        <p><strong>Fechas:</strong> ${e.start} → ${e.end}</p>
+        <p><strong>Fechas:</strong> ${formatDate(event.start)} a ${formatDate(event.end)}</p>
         <p><strong>Detalle:</strong> ${e.desc}</p>
         <p><strong>Lugar:</strong> ${e.place}</p>
      <div class="accordion-actions">
@@ -955,6 +955,10 @@ function moveEventDown(index) {
   updateCalendar();
 }
 
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('es-CO', { day: 'numeric', month: 'long', year: 'numeric' });
+}
 
     function updateCalendar() {
       createCalendar();
