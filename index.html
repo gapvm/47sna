@@ -888,6 +888,11 @@ body {
       document.getElementById("event-place").value = "";
     }
 
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('es-CO', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+    
    function renderEventList() {
   const container = document.getElementById("event-list");
   container.innerHTML = "";
@@ -953,11 +958,6 @@ function moveEventDown(index) {
   if (index >= events.length - 1) return;
   [events[index + 1], events[index]] = [events[index], events[index + 1]];
   updateCalendar();
-}
-
-function formatDate(dateStr) {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString('es-CO', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
     function updateCalendar() {
