@@ -587,258 +587,217 @@ body {
     const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
     const events =
-      [
-  {
-    name: "Encuentros de Mundos Posibles",
-    start: "2025-10-19",
-    end: "2025-11-21",
-    color: "#f7dc6f",
-    desc: "19: Wampia llegada a Popayán. 20: Popayán / 21: Popayán - Puracé / 22 y 23 Santander de Quilichao",
-    place: "Popayán"
-  },
-  {
-    name: "Asamblea 1",
-    start: "2025-05-17",
-    end: "2025-05-17",
-    color: "#FADBD8",
-    desc: "Primera asamblea mundos posibles",
-    place: "Wampia"
-  },
-  {
-    name: "Asamblea 2",
-    start: "2025-08-09",
-    end: "2025-08-09",
-    color: "#FADBD8",
-    desc: "Segunda asamblea mundos posibles",
-    place: "Puerto Tejada"
-  },
-  {
-    name: "Asamblea 3",
-    start: "2025-10-27",
-    end: "2025-10-27",
-    color: "#FADBD8",
-    desc: "Tercera asamblea Inaugural: UAIIN",
-    place: "Popayán"
-  },
-  {
-    name: "Asamblea 4",
-    start: "2025-11-05",
-    end: "2025-11-11",
-    color: "#FADBD8",
-    desc: "Clausura",
-    place: "El Tuno"
-  },
-  {
-    name: "Asamblea 5",
-    start: "2025-12-17",
-    end: "2025-12-17",
-    color: "#FADBD8",
-    desc: "p",
-    place: "p"
-  },
-  {
-    name: "Residencia 1 - Wampia",
-    start: "2025-09-15",
-    end: "2025-10-10",
-    color: "#f1ccff",
-    desc: "Casa de los sueños / Casa Payán",
-    place: "Wampia"
-  },
-  {
-    name: "Residencia 2",
-    start: "2025-09-15",
-    end: "2025-10-10",
-    color: "#E8DAEF",
-    desc: "p",
-    place: "p"
-  },
-  {
-    name: "Residencia 3",
-    start: "2025-08-01",
-    end: "2025-08-09",
-    color: "#D2B4DE",
-    desc: "p",
-    place: "p"
-  },
-  {
-    name: "Residencia 5",
-    start: "2025-09-15",
-    end: "2025-10-10",
-    color: "#A569BD",
-    desc: "p",
-    place: "p"
-  },
-  {
-    name: "Inauguración 47 SNA",
-    start: "2025-10-24",
-    end: "2025-10-25",
-    color: "#ff00bb",
-    desc: "-",
-    place: "Popayán"
-  },
-  {
-    name: "Inauguración 47SNA",
-    start: "2025-10-26",
-    end: "2025-10-26",
-    color: "#ff00bb",
-    desc: "-",
-    place: "Santander de Quilichao, Norte del Cauca"
-  },
-  {
-    name: "Recorrido 8",
-    start: "2025-09-07",
-    end: "2025-09-13",
-    color: "#2da44e",
-    desc: "Laguna del Buey",
-    place: "El Bordo"
-  },
-  {
-    name: "Encuentro de Saberes Ancestrales",
-    start: "2025-09-14",
-    end: "2025-09-16",
-    color: "#6D4C41",
-    desc: "Diálogos entre abuelos, lideresas y jóvenes sobre el río.",
-    place: "Malecón Cultural, Honda"
-  },
-  {
-    name: "Expositivo Intervenciones Espacio Público 4 - Convocatoria",
-    start: "2025-10-25",
-    end: "2025-12-15",
-    color: "#00897b",
-    desc: "Invitación pública",
-    place: "Popayán, otros por definir"
-  },
-  {
-    name: "Exposición Convencional 1",
-    start: "2025-10-25",
-    end: "2025-12-15",
-    color: "#00897b",
-    desc: "Casa Arte",
-    place: "Popayán"
-  },
-  {
-    name: "Exposición Convencional 2",
-    start: "2025-10-25",
-    end: "2025-12-15",
-    color: "#00897b",
-    desc: "Lugar por definir. Mujeres creando",
-    place: "Popayán"
-  },
-  {
-    name: "Exposición Convencional 4",
-    start: "2025-10-25",
-    end: "2025-12-15",
-    color: "#00897b",
-    desc: "Escuela Taller",
-    place: "Puerto Tejada"
-  },
-  {
-    name: "Exposición Convencional 3",
-    start: "2025-10-25",
-    end: "2025-12-15",
-    color: "#00897b",
-    desc: "Salón de la excelencia",
-    place: "Santander de Quilichao"
-  },
-  {
-    name: "Expositivo Intervenciones Espacio Público 1",
-    start: "2025-10-26",
-    end: "2025-10-26",
-    color: "#00897b",
-    desc: "Lugar por definir. Proyección audiovisual",
-    place: "Norte Cauca"
-  },
-  {
-    name: "Expositivo Intervenciones Espacio Público 2",
-    start: "2025-10-25",
-    end: "2025-12-15",
-    color: "#00897b",
-    desc: "Lugar por definir",
-    place: "Popayán"
-  },
-  {
-    name: "Expositivo Intervenciones Espacio Público 3",
-    start: "2025-10-25",
-    end: "2025-10-25",
-    color: "#00897b",
-    desc: "Lugar por definir. Lucas Avendaño.",
-    place: "Popayán"
-  },
-  {
-    name: "Comadreo de Plantas y Curaciones",
-    start: "2025-09-28",
-    end: "2025-09-28",
-    color: "#66BB6A",
-    desc: "Encuentro de saberes botánicos y espirituales en torno al río.",
-    place: "Jardín Medicinal, Beltrán"
-  },
-  {
-    name: "Comadreo de Saberes Afrodescendientes",
-    start: "2025-10-22",
-    end: "2025-10-22",
-    color: "#EF5350",
-    desc: "Conversaciones sobre memoria, cuerpo y territorio en clave afro.",
-    place: "Centro Cultural Palenque, Santa Cruz de Mompox"
-  },
-  {
-    name: "Comadreo de Infancias y Río",
-    start: "2025-11-18",
-    end: "2025-11-18",
-    color: "#FFD54F",
-    desc: "Juego, dibujo y relato como formas de cuidar el río.",
-    place: "Escuela Rural, Sitio Nuevo"
-  },
-  {
-    name: "Raíces del Agua",
-    start: "2025-09-10",
-    end: "2025-10-15",
-    color: "#1E88E5",
-    desc: "Exposición colectiva sobre territorios ribereños y memoria hídrica.",
-    place: "Casa Museo del Río, Mompox"
-  },
-  {
-    name: "Fibras del Magdalena",
-    start: "2025-10-20",
-    end: "2025-11-30",
-    color: "#43A047",
-    desc: "Muestra textil con comunidades artesanas del Magdalena Medio.",
-    place: "Centro Cultural El Retorno, Barrancabermeja"
-  },
-  {
-    name: "Inaudito Magdalena",
-    start: "2025-11-05",
-    end: "2025-12-15",
-    color: "#F4511E",
-    desc: "Instalaciones y paisajes sonoros de artistas del Caribe colombiano.",
-    place: "Museo del Atlántico, Barranquilla"
-  },
-  {
-    name: "Aguas Arriba",
-    start: "2025-09-01",
-    end: "2025-10-01",
-    color: "#00ACC1",
-    desc: "Relatos visuales del nacimiento del río Magdalena en el Macizo.",
-    place: "Biblioteca Central, Neiva"
-  },
-  {
-    name: "Territorio Estuario",
-    start: "2025-10-10",
-    end: "2025-11-20",
-    color: "#8E24AA",
-    desc: "Cartografías líquidas del delta del río en Bocas de Ceniza.",
-    place: "Galería Puerto Abierto, Santa Marta"
-  },
-  {
-    name: "Río Adentro",
-    start: "2025-11-01",
-    end: "2025-12-10",
-    color: "#FDD835",
-    desc: "Obras que dialogan con el tránsito, el cauce y la deriva.",
-    place: "Espacio Fluvial, La Dorada"
-  }
-]
 
-      
+[
+  {
+    "name": "Inauguración Salón Nacional Artistas",
+    "start": "25/10/25",
+    "end": "29/10/25",
+    "color": "#273746",
+    "desc": "pendiente",
+    "place": "Popayán y Norte"
+  },
+  {
+    "name": "Encuentros de mundos posibles - W/P",
+    "start": "19/11/25",
+    "end": "19/11/25",
+    "color": "#f7dc6f",
+    "desc": "Kampa Wam / Apertura Popayán",
+    "place": "Wampía / Popayán"
+  },
+  {
+    "name": "Encuentros de mundos posibles - P",
+    "start": "20/11/25",
+    "end": "21/11/25",
+    "color": "#f7dc6f",
+    "desc": "",
+    "place": "Popayán"
+  },
+  {
+    "name": "Encuentros de mundos posibles - P/P",
+    "start": "22/11/25",
+    "end": "22/11/25",
+    "color": "#f7dc6f",
+    "desc": "",
+    "place": "Popayán - Puracé"
+  },
+  {
+    "name": "Encuentros de mundos posibles - S. Q",
+    "start": "23/11/25",
+    "end": "23/11/25",
+    "color": "#f7dc6f",
+    "desc": "",
+    "place": "Santander Quilichao"
+  },
+  {
+    "name": "Asamblea 1 - Wampía",
+    "start": "17/05/25",
+    "end": "17/05/25",
+    "color": "#fadbd8",
+    "desc": "Primera asamblea mundos posibles",
+    "place": "Wampía"
+  },
+  {
+    "name": "Asamblea 2 - Puerto Tejada",
+    "start": "16/08/25",
+    "end": "17/08/25",
+    "color": "#fadbd8",
+    "desc": "Segunda asamblea mundos posibles",
+    "place": "Puerto Tejada"
+  },
+  {
+    "name": "Asamblea 3 - Inaugural Popayán",
+    "start": "25/10/25",
+    "end": "25/10/25",
+    "color": "#fadbd8",
+    "desc": "Tercera asamblea Inaugural: UAIIN",
+    "place": "Popayán"
+  },
+  {
+    "name": "Asamblea 4 - Clausura Timbiquí",
+    "start": "05/11/25",
+    "end": "11/11/25",
+    "color": "#fadbd8",
+    "desc": "Clausura",
+    "place": "Sta. María Timbiquí"
+  },
+  {
+    "name": "Residencia 1 - Wampía",
+    "start": "23/10/25",
+    "end": "23/11/25",
+    "color": "#e8dbee",
+    "desc": "Casa de los sueños / Casa Payán",
+    "place": "Wampía"
+  },
+  {
+    "name": "Residencia 2 - Yanacroma",
+    "start": "16/10/25",
+    "end": "25/10/25",
+    "color": "#e8daef",
+    "desc": "Yanacroma",
+    "place": "Río Blanco - Sotará"
+  },
+  {
+    "name": "Residencia 3 - El Tuno",
+    "start": "26/09/25",
+    "end": "26/10/25",
+    "color": "#e8dbee",
+    "desc": "Consejo Comunitario El Tuno",
+    "place": "El Tuno"
+  },
+  {
+    "name": "Residencia 4 - Sta. Bbra. Timbiquí",
+    "start": "26/09/25",
+    "end": "26/10/25",
+    "color": "#e8dbee",
+    "desc": "Casa Cultural",
+    "place": "Sta. Bbra. Timbiquí"
+  },
+  {
+    "name": "Residencia 5 - Popayork",
+    "start": "26/09/25",
+    "end": "26/10/25",
+    "color": "#e8dbee",
+    "desc": "Popayork",
+    "place": "Popayán"
+  },
+  {
+    "name": "Exposición Convencional 1",
+    "start": "25/10/25",
+    "end": "15/12/25",
+    "color": "#00897b",
+    "desc": "Casa Arte",
+    "place": "Popayán"
+  },
+  {
+    "name": "Exposición Convencional 2",
+    "start": "25/10/25",
+    "end": "15/12/25",
+    "color": "#00897b",
+    "desc": "Lugar por definir. Mujeres creando",
+    "place": "Popayán"
+  },
+  {
+    "name": "Exposición Convencional 4",
+    "start": "25/10/25",
+    "end": "15/12/25",
+    "color": "#00897b",
+    "desc": "Escuela Taller",
+    "place": "Puerto Tejada"
+  },
+  {
+    "name": "Exposición Convencional 3",
+    "start": "25/10/25",
+    "end": "15/12/25",
+    "color": "#00897b",
+    "desc": "Salón de la excelencia",
+    "place": "Santander de Quilichao"
+  },
+  {
+    "name": "Expositivo Intervenciones Espacio Público 1",
+    "start": "26/10/25",
+    "end": "26/10/25",
+    "color": "#00897b",
+    "desc": "Lugar por definir. Proyección audiovisual",
+    "place": "Norte Cauca"
+  },
+  {
+    "name": "Expositivo Intervenciones Espacio Público 2",
+    "start": "25/10/25",
+    "end": "15/12/25",
+    "color": "#00897b",
+    "desc": "Lugar por definir",
+    "place": "Popayán"
+  },
+  {
+    "name": "Expositivo Intervenciones Espacio Público 3",
+    "start": "25/10/25",
+    "end": "25/10/25",
+    "color": "#00897b",
+    "desc": "Lugar por definir. Lucas Avendaño.",
+    "place": "Popayán"
+  },
+  {
+    "name": "Vivencial - Ofrenda litoral Timbiquí",
+    "start": "10/12/25",
+    "end": "14/12/25",
+    "color": "#ff7043",
+    "desc": "Ofrenda",
+    "place": "Sta. Bbra. Timbiquí"
+  },
+  {
+    "name": "Vivencial - Ofrenda dos aguas Pto. Tejada",
+    "start": "26/10/25",
+    "end": "26/10/25",
+    "color": "#dd623b",
+    "desc": "Ofrenda dos aguas",
+    "place": "Puerto Tejada"
+  },
+  {
+    "name": "Recorrido 1 - Villa Rica",
+    "start": "26/10/25",
+    "end": "26/10/25",
+    "color": "#2da44e",
+    "desc": "Espacio Público",
+    "place": "Villa Rica"
+  },
+  {
+    "name": "Recorrido 2 - Nasa, Campesino, Misak",
+    "start": "13/11/25",
+    "end": "17/11/25",
+    "color": "#2da44e",
+    "desc": "Nasa, Campesino, Misak",
+    "place": "San Andrés de Pisimbalá Inzá & Wampia-Silvia"
+  },
+  {
+    "name": "Recorrido 3 - Litoral",
+    "start": "11/12/25",
+    "end": "15/12/25",
+    "color": "#ff2600",
+    "desc": "Clausura",
+    "place": "Buenaventura, Sta. María - Sta. Bbra. Timbiquí"
+  }
+]      
       ;
 
     let editingIndex = null;
