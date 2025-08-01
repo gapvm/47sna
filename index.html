@@ -531,7 +531,6 @@ body {
 <body>
   <header class="main-header">
     <p>Eventos 47SNA &#126; KAUKA &#126; asamblea de mundos posibles</p>
-    <img src="img/k01.png" alt="KAUKA">
   </header>
 
  <div class="main-layout">
@@ -896,7 +895,7 @@ body {
     const item = document.createElement("div");
     item.className = "accordion-item";
 
-    item.innerHTML = 
+    item.innerHTML = `
       <div class="accordion-header" onclick="toggleAccordion(${i})">
         <span class="color-swatch" style="background-color:${e.color}"></span>
         <strong>${e.name}</strong>
@@ -910,13 +909,13 @@ body {
           <button onclick="deleteEvent(${i})"><span class="material-symbols-outlined">close_small</span></button>
         </div>
       </div>
-    ;
+    `;
     container.appendChild(item);
   });
 }
 
 function toggleAccordion(index) {
-  const content = document.getElementById(accordion-${index});
+  const content = document.getElementById(`accordion-${index}`);
   if (content.style.display === "block") {
     content.style.display = "none";
   } else {
@@ -958,7 +957,7 @@ function toggleAccordion(index) {
       const container = document.getElementById("calendar");
       container.innerHTML = "";
       const today = new Date();
-      const todayStr = ${today.getFullYear()}-${String(today.getMonth()+1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')};
+      const todayStr = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 
       for (let m = startMonth; m <= endMonth; m++) {
         const daysInMonth = new Date(year, m + 1, 0).getDate();
@@ -990,7 +989,7 @@ function toggleAccordion(index) {
           const dayNum = i - firstDay + 1;
 
           if (i >= firstDay && dayNum <= daysInMonth) {
-            const dateStr = ${year}-${String(m+1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')};
+            const dateStr = `${year}-${String(m+1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
             dayDiv.dataset.date = dateStr;
 
             const num = document.createElement("div");
@@ -1012,7 +1011,7 @@ function toggleAccordion(index) {
                 const line = document.createElement("div");
                 line.className = "event-line";
                 line.style.backgroundColor = ev.color;
-                line.title = ${ev.name}\n${ev.desc || ''};
+                line.title = `${ev.name}\n${ev.desc || ''}`;
                 const initials = ev.name.split(' ').map(w => w[0]).join('').toUpperCase();
               const isStartDate = current.toISOString().split("T")[0] === ev.start;
 if (isStartDate) {
@@ -1037,7 +1036,7 @@ if (isStartDate) {
     }
 
     function exportToCSV() {
-      const escape = val => "${String(val).replace(/"/g, '""')}";
+      const escape = val => `"${String(val).replace(/"/g, '""')}"`;
       const csvRows = ["Nombre,Fecha inicio,Fecha fin,Color,Detalle,Lugar"];
       events.forEach(e => {
         const row = [escape(e.name), escape(e.start), escape(e.end), escape(e.color), escape(e.desc), escape(e.place)];
