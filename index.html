@@ -905,10 +905,13 @@ body {
         <p><strong>Fechas:</strong> ${e.start} → ${e.end}</p>
         <p><strong>Detalle:</strong> ${e.desc}</p>
         <p><strong>Lugar:</strong> ${e.place}</p>
-        <div class="accordion-actions">
-          <button onclick="editEvent(${i})"><span class="material-symbols-outlined">titlecase</span></button>
-          <button onclick="deleteEvent(${i})"><span class="material-symbols-outlined">close_small</span></button>
-        </div>
+     <div class="accordion-actions">
+  <button onclick="moveEventUp(${i})" title="Subir"><span class="material-symbols-outlined">arrow_upward</span></button>
+  <button onclick="moveEventDown(${i})" title="Bajar"><span class="material-symbols-outlined">arrow_downward</span></button>
+  <button onclick="editEvent(${i})" title="Editar"><span class="material-symbols-outlined">titlecase</span></button>
+  <button onclick="deleteEvent(${i})" title="Eliminar"><span class="material-symbols-outlined">close_small</span></button>
+</div>
+
       </div>
     `;
     container.appendChild(item);
@@ -939,6 +942,19 @@ function toggleAccordion(index) {
       events.splice(index, 1);
       updateCalendar();
     }
+
+    function moveEventUp(index) {
+  if (index <= 0) return;
+  [events[index - 1], events[index]] = [events[index], events[index - 1]];
+  updateCalendar();
+}
+
+function moveEventDown(index) {
+  if (index >= events.length - 1) return;
+  [events[index + 1], events[index]] = [events[index], events[index + 1]];
+  updateCalendar();
+}
+
 
     function updateCalendar() {
       createCalendar();
