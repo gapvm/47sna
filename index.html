@@ -926,7 +926,7 @@ function moveEventDown(index) {
     function updateCalendar() {
   createCalendar();
   renderEventList();
-  saveEventsToLocalStorage();
+  saveEventsToSessionStorage();
 }
 
     function isDarkColor(hex) {
@@ -1036,12 +1036,12 @@ if (isStartDate) {
       URL.revokeObjectURL(url);
     }
 
-function saveEventsToLocalStorage() {
-  localStorage.setItem("events_47sna", JSON.stringify(events));
+function saveEventsToSessionStorage() {
+  sessionStorage.setItem("events_47sna", JSON.stringify(events));
 }
 
-function loadEventsFromLocalStorage() {
-  const saved = localStorage.getItem("events_47sna");
+function loadEventsFromSessionStorage() {
+  const saved = sessionStorage.getItem("events_47sna");
   if (saved) {
     try {
       const parsed = JSON.parse(saved);
@@ -1055,7 +1055,7 @@ function loadEventsFromLocalStorage() {
   }
 }
 
-loadEventsFromLocalStorage();
+loadEventsFromSessionStorage();
 
     updateCalendar();
   </script>
